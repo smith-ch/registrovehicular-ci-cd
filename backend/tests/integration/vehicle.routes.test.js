@@ -1,0 +1,24 @@
+// tests/integration/vehicle.routes.test.js
+const request = require('supertest');
+const express = require('express');
+const app = require('../../backend/src/app');
+
+describe('Rutas de vehículos', () => {
+  it('GET /api/vehicles debe devolver un array', async () => {
+    const res = await request(app).get('/api/vehicles');
+    expect(res.statusCode).toBe(200);
+    expect(Array.isArray(res.body)).toBe(true);
+  });
+
+  it('POST /api/vehicles debe crear un vehículo', async () => {
+    const newVehicle = {
+      marca: 'Toyota',
+      modelo: 'Corolla',
+      año: 2022
+    };
+    const res = await request(app).post('/api/vehicles').send(newVehicle);
+    expect(res.statusCode).toBe(201);
+    expect(res.body).toHaveProperty('_id'); // si usas Mongo
+    expect(res.body.marca).toBe('Toyota');
+  });
+});

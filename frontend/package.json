@@ -1,0 +1,26 @@
+{
+  "name": "registrovehicular-frontend",
+  "version": "1.0.0",
+  "description": "UI estática para registro vehicular",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "live-server --port=8080 --host=0.0.0.0",
+    "dev": "nodemon src/app.js",
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "mongoose": "^7.2.0",
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3",
+    "eslint": "^8.40.0"
+  }
+}
