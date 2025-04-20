@@ -1,5 +1,5 @@
 // tests/unit/vehicle.model.test.js
-const Vehicle = require('../../src/models/vehicle.model'); // Ajusta si tu modelo está en otra ruta
+const Vehicle = require('../../src/models/vehicle.model.js'); // Ajusta si tu modelo está en otra ruta
 
 describe('Modelo Vehicle', () => {
   it('Debe crear una instancia de vehículo válida', () => {

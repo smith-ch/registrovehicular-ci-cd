@@ -12,4 +12,10 @@ db.connect();
 app.use('/api/vehicles', vehicleRoutes);
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Backend escuchando en puerto ${PORT}`));
+
+// Solo escuchar si no estamos en un entorno de pruebas
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => console.log(`Backend escuchando en puerto ${PORT}`));
+}
+
+module.exports = app;  // Exporta la aplicación para las pruebas

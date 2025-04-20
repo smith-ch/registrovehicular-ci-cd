@@ -7,19 +7,28 @@
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest --detectOpenHandles --forceExit"
   },
   "dependencies": {
-    "express": "^4.18.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "mongoose": "^7.2.0"
   },
   "devDependencies": {
     "chai": "^4.3.7",
+    "eslint": "^8.40.0",
     "mocha": "^10.2.0",
+    "mongodb-memory-server": "^10.1.4",
     "nodemon": "^2.0.22",
-    "supertest": "^6.3.3",
-    "eslint": "^8.40.0"
+    "supertest": "^6.3.3"
+  },
+
+  "mongodbMemoryServerOptions": {
+    "binary": {
+      "version": "7.0.14"
+    },
+    "instance": {},
+    "autoStart": false
   }
 }
