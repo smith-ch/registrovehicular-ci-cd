@@ -1,7 +1,7 @@
 // tests/integration/vehicle.routes.test.js
 const request = require('supertest');
 const express = require('express');
-const app = require('../../backend/src/app');
+const app = require('../../src/app');
 
 describe('Rutas de vehículos', () => {
   it('GET /api/vehicles debe devolver un array', async () => {
